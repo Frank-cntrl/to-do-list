@@ -5,7 +5,7 @@ import "./TaskCardStyles.css";
 const TaskCard = ({ task, fetchAllTasks }) => {
   const handleCompleteTask = async () => {
     try {
-      await axios.patch(`https://express-intro-starting-point-git-patch-franks-projects-601765f0.vercel.app/api/tasks/${task.id}`, {
+      await axios.patch(`https://express-intro-starting-point-iota.vercel.app/api/tasks/${task.id}`, {
         completed: !task.completed,
       });
       fetchAllTasks();
@@ -16,7 +16,7 @@ const TaskCard = ({ task, fetchAllTasks }) => {
 
   const handleDeleteTask = async () => {
     try {
-      await axios.delete(`https://express-intro-starting-point-git-patch-franks-projects-601765f0.vercel.app/api/tasks/${task.id}`);
+      await axios.delete(`https://express-intro-starting-point-iota.vercel.app/api/tasks/${task.id}`);
       fetchAllTasks();
     } catch (error) {
       console.error("Error deleting task:", error);
